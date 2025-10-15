@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Satoshi  from "next/font/local";
 import "./globals.css";
+import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import Providers from "@/components/Providers";
 
 const satoshi = Satoshi({
   src:[{
@@ -27,11 +29,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" {...mantineHtmlProps}>
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body
         className={`${satoshi.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          <MantineProvider>{children}</MantineProvider>
+        </Providers>
       </body>
     </html>
   );
