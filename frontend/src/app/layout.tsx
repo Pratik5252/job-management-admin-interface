@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Satoshi  from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const satoshi = Satoshi({
+  src:[{
+    path: './fonts/Satoshi-Variable.woff2',
+    weight: '300 900',
+    style: 'normal'
+  },{
+    path: './fonts/Satoshi-VariableItalic.woff',
+    weight: '300 900',
+    style: 'italic'
+  }],
+  variable: '--font-satoshi',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${satoshi.variable} antialiased`}
       >
         {children}
       </body>
