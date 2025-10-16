@@ -1,14 +1,18 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #FBFBFF;
+  --background-secondary: #FFFFFF;
+  --foreground: #000000;
+  --foreground-secondary: #5A5A5A;
+  --gradient-btn: linear-gradient(to right, #A128FF, #6100AD);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-satoshi);
+  --stroke-nav: #FCFCFC;
+
+  --drop-shadow-nav: 0 0 20px 0 rgba(127, 127, 127, 0.15);
+
+
+  --font-satoshi: var(--font-satoshi);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,8 +22,91 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-satoshi), sans-serif;
+ body{
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-satoshi);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ li{
+    list-style: none;
+    font-weight: bold;
+    color: #303030;
+    padding: 8px 24px;
+    cursor: pointer;
+
+ }
+ ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+ }
+
+ .header-section{
+  background-color: var(--background-secondary);
+  padding: 0px 0px;
+  box-shadow: var(--drop-shadow-nav);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+ }
+.navbar{
+  background-color: var(--background-secondary);
+  box-shadow: var(--drop-shadow-nav);
+  border-bottom: 1px solid var(--stroke-nav);
+  padding: 16px 26px;
+  border-radius: 122px;
+  
+}
+
+.create-btn{
+  --button-bg: var(--gradient-btn);
+  --button-hover: linear-gradient(to right, #8f1ee6, #5500a1);
+  --button-color: var(--background-secondary);
+  --button-radius: 30px;
+  --button-height: 42px;
+  --button-padding-y: 8px;
+  --button-padding-x: 16px;
+  --button-fz: 14px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.filters{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 44px;
+}
+
+.filter-text{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #686868;
+  padding: 12px 24px;
+  border-right:2px solid #EAEAEA;
+}
+
+.filter-range{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #686868;
+  padding: 12px 24px;
+}
+
+
+input::placeholder {
+  color: #686868;
+  font-size: 16;
+  font-weight:500;
+  
 }
