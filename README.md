@@ -62,7 +62,7 @@ cybermind-assignment/
 1. **Clone the repository**
    ```bash
    git clone https://github.com/Pratik5252/job-management-admin-interface.git
-   cd cybermind-assignment
+   cd job-management-admin-interface
    ```
 
 2. **Install dependencies**
@@ -128,12 +128,3 @@ The backend is deployed on Heroku with automatic deployments from the main branc
 
 ### Frontend (Vercel)
 The frontend is deployed on Vercel with automatic deployments from the main branch.
-
-## 📄 License
-
-This project is created for assignment purposes.
-
-## 👨‍💻 Author
-
-**Pratik5252**
-- GitHub: [@Pratik5252](https://github.com/Pratik5252)
