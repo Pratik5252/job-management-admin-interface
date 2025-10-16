@@ -16,6 +16,6 @@ async function bootstrap() {
     origin: process.env.BASE_URL,
   })
   app.setGlobalPrefix('api/v1');
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
