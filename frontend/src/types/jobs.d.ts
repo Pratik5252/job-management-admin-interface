@@ -1,3 +1,5 @@
+type JobType = 'FULL_TIME' | 'PART_TIME' | 'CONTRACT' | 'INTERNSHIP'
+
 type JobBody = {
     title: string
     companyName: string
@@ -32,4 +34,4 @@ type JobResponse<T> = {
     data: T
 }
     
-export { Job,JobBody, JobResponse }
+export { Job, JobBody, JobResponse, JobType }
