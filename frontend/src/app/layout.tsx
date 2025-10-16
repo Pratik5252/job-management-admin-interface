@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Satoshi  from "next/font/local";
 import "./globals.css";
+import '@mantine/core/styles.layer.css'
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
 import Providers from "@/components/Providers";
 
