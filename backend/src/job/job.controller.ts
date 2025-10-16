@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { JobService } from './job.service';
 import { JobDto,JobResponseDto } from './dto/create-job.dto';
 
@@ -7,8 +7,22 @@ export class JobController {
     constructor(private jobService: JobService){}
 
     @Get()
-    async getJobs(): Promise<JobResponseDto>{
-        const jobs = await this.jobService.getJobs();
+    async getJobs(
+        @Query('search') search?: string,
+        @Query('location') location?: string,
+        @Query('jobType') jobType?: string,
+        @Query('minSalary') minSalary?: string,
+        @Query('maxSalary') maxSalary?: string,
+    ): Promise<JobResponseDto>{
+        const filters = {
+            search,
+            location,
+            jobType: jobType?.split(','), // Handle multiple job types
+            minSalary: minSalary ? parseInt(minSalary) : undefined,
+            maxSalary: maxSalary ? parseInt(maxSalary) : undefined,
+        };
+        
+        const jobs = await this.jobService.getJobs(filters);
         return {
             success: true,
             message: "Jobs fetched successfully",
@@ -18,7 +32,13 @@ export class JobController {
 
     @Post()
     async createJob(@Body() createJobData: JobDto): Promise<JobResponseDto>{
-        const job = await this.jobService.createJob(createJobData);
+        // Ensure applicationDeadline is a proper Date object
+        const jobData = {
+            ...createJobData,
+            applicationDeadline: new Date(createJobData.applicationDeadline)
+        };
+        
+        const job = await this.jobService.createJob(jobData);
         return {
             success: true,
             message: "Job created successfully",
