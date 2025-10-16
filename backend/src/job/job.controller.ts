@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { JobService } from './job.service';
-import { JobDto,JobResponseDto } from './dto/create-job.dto';
+import { JobDto, JobResponseDto } from './dto/create-job.dto';
 
 @Controller('jobs')
 export class JobController {
@@ -27,7 +27,7 @@ export class JobController {
             success: true,
             message: "Jobs fetched successfully",
             data: jobs
-        }
+        };
     }
 
     @Post()
