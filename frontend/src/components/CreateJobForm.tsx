@@ -4,7 +4,7 @@ import { useForm, Controller } from 'react-hook-form'
 import { useCreateJob } from '@/hooks/useJobs'
 import { JobBody, JobType } from '@/types/jobs'
 import { notifications } from '@mantine/notifications'
-import { Building2, MapPin, Briefcase, DollarSign, Calendar, FileText, User, IndianRupee, ChevronsRight, ChevronsDown, ChevronDown } from 'lucide-react'
+import { Calendar, ChevronsRight, ChevronsDown, ChevronDown, ArrowUpDown } from 'lucide-react'
 import React from 'react'
 
 type ModalProps = {
@@ -44,10 +44,18 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
     });
 
     const onSubmit = async (data: JobFormData) => {
+
+        const getImageUrl = () => {
+            const imageUrl = `https://img.logo.dev/${data.companyName.toLowerCase()}.com?token=${process.env.NEXT_PUBLIC_TOKEN}&format=png&theme=light`
+            console.log(imageUrl);
+            
+            return imageUrl;
+        }
         try {
             const jobData: JobBody = {
                 title: data.title,
                 companyName: data.companyName,
+                imageUrl: getImageUrl(),
                 location: data.location,
                 jobType: data.jobType,
                 minimumSalary: data.minimumSalary,
@@ -88,7 +96,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
             radius="lg"
         >
             <Paper p="md">
-                <Title order={3} ta="center" mb="xl">Create Job Opening</Title>
+                <Title fw={700} size={24} ta="center" mb="xl">Create Job Opening</Title>
                 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <Stack gap="md">
@@ -104,7 +112,6 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             label="Job Title"
                                             placeholder="e.g. Full Stack Developer"
                                             error={errors.title?.message}
-                                            required
                                             radius="md"
                                             size='md'
                                             
@@ -123,7 +130,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             label="Company Name"
                                             placeholder="e.g. Amazon, Microsoft, Swiggy"
                                             error={errors.companyName?.message}
-                                            required
+        
                                             radius="md"
                                             size="md"
                                         />
@@ -143,7 +150,6 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             label="Location"
                                             placeholder="e.g. Remote, New York, Bangalore"
                                             error={errors.location?.message}
-                                            required
                                             radius="md"
                                             size="md"
                                         />
@@ -168,7 +174,6 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                                 { value: 'INTERNSHIP', label: 'Internship' }
                                             ]}
                                             error={errors.jobType?.message}
-                                            required
                                             radius="md"
                                             size="md"
                                         />
@@ -188,8 +193,9 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             {...field}
                                             value={value || undefined}
                                             onChange={(val) => onChange(val || null)}
-                                            placeholder="50,000"
-                                            leftSection={<IndianRupee size={16} />}
+                                            placeholder="₹50,000"
+                                            hideControls 
+                                            leftSection={<ArrowUpDown size={16} />}
                                             thousandSeparator=","
                                             error={errors.minimumSalary?.message}
                                             radius="md"
@@ -208,8 +214,9 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             {...field}
                                             value={value || undefined}
                                             onChange={(val) => onChange(val || null)}
-                                            placeholder="1,20,000"
-                                            leftSection={<IndianRupee size={16} />}
+                                            placeholder="₹1,20,000"
+                                            hideControls 
+                                            leftSection={<ArrowUpDown size={16} />}
                                             thousandSeparator=","
                                             error={errors.maximumSalary?.message}
                                             radius="md"
@@ -229,8 +236,8 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             label="Application Deadline"
                                             placeholder="Select date"
                                             rightSection={<Calendar size={16} />}
+                                            clearable
                                             error={errors.applicationDeadline?.message}
-                                            required
                                             minDate={new Date()}
                                             radius="md"
                                             size="md"
@@ -252,29 +259,38 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                     resize="vertical"
                                     minRows={10}
                                     error={errors.description?.message}
-                                    required
                                     radius="md"
                                     size="md"
                                     styles={{
                                         input: {
                                             minHeight: '100px',
                                             maxHeight: '180px',
-                                            height: '150px'
+                                            height: '144px'
                                         }
                                     }}
                                 />
                             )}
                         />
 
-                        {/* <Controller
+                        <Controller
                             name="requirements"
                             control={control}
                             render={({ field }) => (
                                 <Textarea
                                     {...field}
-                                    label="Requirements (Optional)"
+                                    label="Requirements"
                                     placeholder="List the required skills, experience, and qualifications"
                                     minRows={3}
+                                    error={errors.requirements?.message}
+                                    radius="md"
+                                    size="md"
+                                    styles={{
+                                        input: {
+                                            minHeight: '100px',
+                                            maxHeight: '180px',
+                                            height: '144px'
+                                        }
+                                    }}
                                 />
                             )}
                         />
@@ -285,14 +301,24 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                             render={({ field }) => (
                                 <Textarea
                                     {...field}
-                                    label="Responsibilities (Optional)"
+                                    label="Responsibilities"
                                     placeholder="Describe the key responsibilities and duties"
                                     minRows={3}
+                                    error={errors.responsibilities?.message}
+                                    radius="md"
+                                    size="md"
+                                    styles={{
+                                        input: {
+                                            minHeight: '100px',
+                                            maxHeight: '180px',
+                                            height: '144px'
+                                        }
+                                    }}
                                 />
                             )}
-                        /> */}
+                        />
 
-                        <Group justify="space-between" mt="xl">
+                        <Group justify="space-between" mt="lg">
                                 <Button
                                     variant="default"
                                     onClick={() => reset()}
