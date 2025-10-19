@@ -34,7 +34,7 @@ const Jobs = () => {
     }
 
     return (
-        <Container size="xl" py="xl">
+        <Container size="xl" py={52} >
             <Grid>
                 {data.data.map(job => (
                     <Grid.Col key={job.id} span={{ base: 12, sm: 6, md: 4, lg: 3 }}>
