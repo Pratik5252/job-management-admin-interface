@@ -94,8 +94,31 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
             withCloseButton={false}
             padding="md"
             radius="lg"
+            styles={{
+                content: {
+                    overflow: 'hidden',
+                },
+                body: { 
+                    overflow: 'hidden',
+                }
+            }}
         >
-            <Paper p="md">
+            <Paper 
+                p="md" 
+                radius="lg"
+                styles={{
+                    root: {
+                        maxHeight: '85vh',
+                        overflowY: 'auto',
+                        borderRadius: 'var(--mantine-radius-lg)',
+                        '&::-webkit-scrollbar': {
+                            display: 'none',
+                        },
+                        scrollbarWidth: 'none',
+                        msOverflowStyle: 'none',
+                    }
+                }}
+            >
                 <Title fw={700} size={24} ta="center" mb="xl">Create Job Opening</Title>
                 
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -114,7 +137,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             error={errors.title?.message}
                                             radius="md"
                                             size='md'
-                                            
+                                            className='custom-placeholder'
                                         />
                                     )}
                                 />
@@ -130,9 +153,9 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             label="Company Name"
                                             placeholder="e.g. Amazon, Microsoft, Swiggy"
                                             error={errors.companyName?.message}
-        
                                             radius="md"
                                             size="md"
+                                            className='custom-placeholder'
                                         />
                                     )}
                                 />
@@ -152,6 +175,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             error={errors.location?.message}
                                             radius="md"
                                             size="md"
+                                            className='custom-placeholder'
                                         />
                                     )}
                                 />
@@ -176,6 +200,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             error={errors.jobType?.message}
                                             radius="md"
                                             size="md"
+                                            className='custom-placeholder'
                                         />
                                     )}
                                 />
@@ -200,6 +225,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             error={errors.minimumSalary?.message}
                                             radius="md"
                                             size="md"
+                                            className='custom-placeholder'
                                         />
                                     )}
                                 />
@@ -221,6 +247,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             error={errors.maximumSalary?.message}
                                             radius="md"
                                             size="md"
+                                            className='custom-placeholder'
                                         />
                                     )}
                                 />
@@ -241,6 +268,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                             minDate={new Date()}
                                             radius="md"
                                             size="md"
+                                            className='custom-placeholder'
                                         />
                                     )}
                                 />
@@ -261,6 +289,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                     error={errors.description?.message}
                                     radius="md"
                                     size="md"
+                                    className='custom-placeholder'
                                     styles={{
                                         input: {
                                             minHeight: '100px',
@@ -284,6 +313,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                     error={errors.requirements?.message}
                                     radius="md"
                                     size="md"
+                                    className='custom-placeholder'
                                     styles={{
                                         input: {
                                             minHeight: '100px',
@@ -307,6 +337,7 @@ const CreateJobForm = ({opened, close}: ModalProps) => {
                                     error={errors.responsibilities?.message}
                                     radius="md"
                                     size="md"
+                                    className='custom-placeholder'
                                     styles={{
                                         input: {
                                             minHeight: '100px',
