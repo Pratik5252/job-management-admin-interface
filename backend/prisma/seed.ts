@@ -17,7 +17,7 @@ async function main() {
       responsibilities: 'Develop and maintain web applications, collaborate with cross-functional teams, write clean code',
       jobType: JobType.FULL_TIME,
       minimumSalary: 60000,
-      maximumSalary: 90000,
+      maximumSalary: 70000,
       applicationDeadline: new Date('2025-12-31'),
     },
     {
@@ -29,8 +29,8 @@ async function main() {
       requirements: '1-3 yr Exp, Node.js, Express, MongoDB, TypeScript',
       responsibilities: 'Build backend services and APIs, optimize server performance',
       jobType: JobType.CONTRACT,
-      minimumSalary: 70000,
-      maximumSalary: 100000,
+      minimumSalary: 55000,
+      maximumSalary: 70000,
       applicationDeadline: new Date('2025-11-30'),
     },
     {
@@ -55,8 +55,8 @@ async function main() {
       requirements: '1-3 yr Exp, React, Node.js, AWS, TypeScript',
       responsibilities: 'Develop full-stack applications, maintain cloud infrastructure',
       jobType: JobType.INTERNSHIP,
-      minimumSalary: 25000,
-      maximumSalary: 40000,
+      minimumSalary: 50000,
+      maximumSalary: 60000,
       applicationDeadline: new Date('2025-12-10'),
     },
     {
@@ -68,8 +68,8 @@ async function main() {
       requirements: '1-3 yr Exp, Node.js, Express, PostgreSQL, Redis',
       responsibilities: 'Develop scalable backend services, implement caching solutions',
       jobType: JobType.FULL_TIME,
-      minimumSalary: 75000,
-      maximumSalary: 105000,
+      minimumSalary: 65000,
+      maximumSalary: 75000,
       applicationDeadline: new Date('2025-12-20'),
     },
     {
@@ -81,8 +81,8 @@ async function main() {
       requirements: '1-3 yr Exp, UI/UX Design, Figma, User Testing, Design Systems',
       responsibilities: 'Create engaging user experiences, conduct user research',
       jobType: JobType.CONTRACT,
-      minimumSalary: 55000,
-      maximumSalary: 85000,
+      minimumSalary: 50000,
+      maximumSalary: 80000,
       applicationDeadline: new Date('2025-11-25'),
     },
     {
@@ -94,8 +94,8 @@ async function main() {
       requirements: '1-3 yr Exp, JavaScript, Python, AWS, Docker',
       responsibilities: 'Build end-to-end solutions, deploy applications to cloud',
       jobType: JobType.PART_TIME,
-      minimumSalary: 35000,
-      maximumSalary: 55000,
+      minimumSalary: 60000,
+      maximumSalary: 65000,
       applicationDeadline: new Date('2025-12-05'),
     },
     {
@@ -107,8 +107,8 @@ async function main() {
       requirements: '1-3 yr Exp, Node.js, GraphQL, Microservices, Docker',
       responsibilities: 'Develop microservices architecture, optimize API performance',
       jobType: JobType.INTERNSHIP,
-      minimumSalary: 30000,
-      maximumSalary: 45000,
+      minimumSalary: 75000,
+      maximumSalary: 80000,
       applicationDeadline: new Date('2025-12-08'),
     }
   ];
