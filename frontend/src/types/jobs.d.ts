@@ -3,6 +3,7 @@ type JobType = 'FULL_TIME' | 'PART_TIME' | 'CONTRACT' | 'INTERNSHIP'
 type JobBody = {
     title: string
     companyName: string
+    imageUrl?: string | null
     location: string
     description: string
     requirements?: string | null
@@ -16,6 +17,7 @@ type Job = {
     id: string
     title: string
     companyName: string
+    imageUrl?: string | null
     location: string
     description: string
     requirements?: string | null
