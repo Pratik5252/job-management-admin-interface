@@ -1,8 +1,8 @@
 import Filters from '@/components/Filters'
-import JobCard from '@/components/Jobs'
+import Job from '@/components/Jobs'
 import Navbar from '@/components/Navbar'
 import { FilterProvider } from '@/contexts/FilterContext'
-import React from 'react'
+import React from 'react'   
 
 const page = () => {
   return (
@@ -12,7 +12,7 @@ const page = () => {
           <Navbar />
           <Filters />
         </div>
-        <JobCard />
+        <Job />
       </div>
     </FilterProvider>
   )
