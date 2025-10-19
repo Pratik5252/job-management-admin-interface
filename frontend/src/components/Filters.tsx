@@ -26,7 +26,7 @@ const Filters = () => {
   }, [search, location, jobType, salaryRange, updateFilters])
 
   return (
-    <div className='filters'>
+    <Container size="xl" py="md" className='filters' >
             <div className='filter-text'>
                 <Search size={18}/>
                 <Input variant="unstyled" placeholder="Search By Job Title, Role" w="100%" value={search} onChange={(e) => setSearch(e.target.value)}/>
@@ -62,10 +62,10 @@ const Filters = () => {
             </div>
             <div className='filter-range'>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-                    <Text fw={500} mb={8} style={{ color: '#333' }}>
+                    <Text fw={500} mb={4} style={{ color: '#333' }}>
                         Salary Per Month
                     </Text>
-                    <Text size="xs" c="dimmed" mb={8}>
+                    <Text fw={500} mb={4} style={{ color: '#333' }}>
                         ₹{(salaryRange[0]/1000).toFixed(0)}k - ₹{(salaryRange[1]/1000).toFixed(0)}k
                     </Text>
                 </div>
@@ -82,7 +82,7 @@ const Filters = () => {
                         style={{width: "100%"}}
                     />
             </div>
-    </div>
+    </Container>
   )
 }
 
