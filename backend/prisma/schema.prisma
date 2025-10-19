@@ -24,6 +24,7 @@ model Jobs {
   id              String   @id @default(uuid())
   title           String
   companyName     String
+  imageUrl        String?
   location        String
   description     String
   requirements    String?

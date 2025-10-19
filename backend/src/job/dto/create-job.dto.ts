@@ -11,6 +11,10 @@ export class JobDto {
     @IsNotEmpty()
     companyName: string
 
+    @IsOptional()
+    @IsString()
+    imageUrl?: string | null
+
     @IsString()
     @IsNotEmpty()
     location: string
@@ -46,6 +50,7 @@ export class JobResponseEntity {
     id: string
     title: string
     companyName: string
+    imageUrl?: string | null
     location: string
     description: string
     requirements?: string | null
