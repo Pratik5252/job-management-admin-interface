@@ -5,7 +5,7 @@
   --background-secondary: #FFFFFF;
   --foreground: #000000;
   --foreground-secondary: #5A5A5A;
-  --gradient-btn: linear-gradient(to right, #A128FF, #6100AD);
+  --gradient-btn: linear-gradient(to bottom, #A128FF, #6100AD);
 
   --stroke-nav: #FCFCFC;
 
@@ -15,12 +15,6 @@
   --font-satoshi: var(--font-satoshi);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
  body{
     background-color: var(--background);
@@ -36,10 +30,10 @@
  li{
     list-style: none;
     font-weight: bold;
+    font-size: 16px;
     color: #303030;
     padding: 8px 24px;
     cursor: pointer;
-
  }
  ul{
     padding: 0;
@@ -69,7 +63,7 @@
   --button-hover: linear-gradient(to right, #8f1ee6, #5500a1);
   --button-color: var(--background-secondary);
   --button-radius: 30px;
-  --button-height: 42px;
+  --button-height: 38px;
   --button-padding-y: 8px;
   --button-padding-x: 16px;
   --button-fz: 14px;
@@ -81,8 +75,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8px;
-  margin : 0px 100px;
+  /* padding: 20px 8px; */
 }
 
 .filter-text{
@@ -91,7 +84,7 @@
   align-items: center;
   gap: 12px;
   color: #686868;
-  padding: 12px 24px;
+  padding: 8px 24px;
   border-right:2px solid #EAEAEA;
 }
 
@@ -102,7 +95,7 @@
   align-items: center;
   gap: 12px;
   color: #686868;
-  padding: 12px 24px;
+  padding: 8px 24px;
 }
 
 
@@ -130,6 +123,13 @@ input::placeholder {
   color: #000000;
   padding: 7px 10px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
+}
+
+.description {
+  color: "#555555";
+  font-size: 14px;
+  font-weight: 500;
+  list-style: disc;
 }
