@@ -10,7 +10,7 @@ const Filters = () => {
   const [search, setSearch] = useState('')
   const [location, setLocation] = useState('')
   const [jobType, setJobType] = useState<string[]>([])
-  const [salaryRange, setSalaryRange] = useState<[number, number]>([25000, 150000]);
+  const [salaryRange, setSalaryRange] = useState<[number, number]>([50000, 80000]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -75,8 +75,8 @@ const Filters = () => {
                         onChange={setSalaryRange}
                         size="xs"
                         thumbSize={16}
-                        min={15000}
-                        max={200000}
+                        min={50000}
+                        max={100000}
                         step={5000}
                         color="#222222"
                         style={{width: "100%"}}
